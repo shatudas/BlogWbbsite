@@ -2,7 +2,11 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
 use App\http\Controllers\HomeController;
+
+use App\http\Controllers\Frontend\FrontendController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,15 +19,11 @@ use App\http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::('/', function () {
+//     return view('welcome');
+// });
 
-
-
-	// Route::get('/dashboard', function () {
-	//  	return view('dashboard');
-	// })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/',[FrontendController::class, 'home'])->name('/');
 
 
 Route::get('/home',[HomeController::class, 'index'])->middleware('auth')->name('home');
