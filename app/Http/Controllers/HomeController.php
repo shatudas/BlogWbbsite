@@ -24,7 +24,7 @@ class HomeController extends Controller
     		}
     		else if($usertype=='admin'){
     			
-    			return view('backend.admin.dashboard');
+    			return view('backend.layouts.home');
 
     		}else{
     			return redirect()->back();
